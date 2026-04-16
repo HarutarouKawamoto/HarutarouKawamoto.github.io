@@ -134,6 +134,8 @@
 
 **受け入れ条件**:
 - [ ] 記事一覧がカード形式で表示される（タイトル・カテゴリ・日付・概要）
+- [ ] 記事一覧はページネーション表示とし、1ページあたり10件を表示する
+- [ ] 次のページへの遷移リンクが機能する
 - [ ] カテゴリ（Featured / New / Learn / Enjoy / Real）でフィルタリングできる（カテゴリ定義は `rules/glossary.md` 参照）
 - [ ] タグでフィルタリングできる
 - [ ] 記事はMarkdownで執筆し、ビルド時にHTMLへ変換される
@@ -193,11 +195,6 @@
 
 ### 将来的な機能（Post-MVP）
 
-#### 検索機能
-Blog記事をキーワードで全文検索できる機能
-
-**優先度**: P2（できれば）
-
 #### OGP・SNSシェア最適化
 各ページ・記事に最適化されたOGP画像が自動生成される機能
 
@@ -232,6 +229,7 @@ Blog記事をキーワードで全文検索できる機能
 - Largest Contentful Paint (LCP): 2.5秒以内
 - Cumulative Layout Shift (CLS): 0.1以下
 - Interaction to Next Paint (INP): 200ms以内
+- Time to First Byte (TTFB): 600ms以内（GitHub Pages CDN経由）
 - 画像は WebP 形式または `<picture>` タグで最適化する
 - 詳細な測定方法は `rules/architecture.md` のパフォーマンス要件を参照
 
@@ -255,7 +253,8 @@ Blog記事をキーワードで全文検索できる機能
 - キーボードのみで全操作が完結できる
 
 ### スケーラビリティ
-- Blog記事が100件を超えてもビルド時間が3分以内に収まる
+- Blog記事が100件を超えても `npm run build` が60秒以内に完了する
+- Blog記事が100件を超えても GitHub Actions のデプロイ（ビルド + GitHub Pages反映）が3分以内に完了する
 - スキル・成果物のデータをTypeScriptの型付きデータファイルで管理し、型安全な拡張ができる
 
 ---
