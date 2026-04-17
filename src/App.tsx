@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, Navigate, useParams } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate, useParams, useLocation } from 'react-router-dom';
 import { ThemeProvider } from './contexts/ThemeContext';
 import { I18nProvider } from './contexts/I18nContext';
 import { Navigation } from './components/Navigation';
@@ -7,30 +7,35 @@ import { Home } from './pages/[lang]/Home';
 import { About } from './pages/[lang]/About';
 import { Skills } from './pages/[lang]/Skills';
 import { Products } from './pages/[lang]/Products';
+import { ProductDetail } from './pages/[lang]/products/ProductDetail';
 import { BlogList } from './pages/[lang]/blog/BlogList';
 import { BlogDetail } from './pages/[lang]/blog/BlogDetail';
 import { Contact } from './pages/[lang]/Contact';
 import { NotFound } from './pages/NotFound';
 import { ErrorBoundary } from './components/ErrorBoundary';
+import { ScrollToTop } from './components/ScrollToTop';
 import { detectInitialLanguage } from './lib/i18n';
 
 function LangLayout() {
   const { lang } = useParams<{ lang: string }>();
+  const location = useLocation();
   if (lang !== 'ja' && lang !== 'en') {
     return <Navigate to={`/${detectInitialLanguage()}/`} replace />;
   }
 
   return (
     <I18nProvider>
+      <ScrollToTop />
       <div className="flex min-h-screen flex-col bg-white text-neutral-950 dark:bg-neutral-950 dark:text-white">
         <Navigation />
-        <div className="flex-1">
+        <div key={location.pathname} className="flex-1 page-transition">
           <ErrorBoundary>
           <Routes>
             <Route index element={<Home />} />
             <Route path="about" element={<About />} />
             <Route path="skills" element={<Skills />} />
             <Route path="products" element={<Products />} />
+            <Route path="products/:id" element={<ProductDetail />} />
             <Route path="blog" element={<BlogList />} />
             <Route path="blog/:slug" element={<BlogDetail />} />
             <Route path="contact" element={<Contact />} />

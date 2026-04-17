@@ -16,7 +16,7 @@ export function Contact() {
             {t.contact.title}
           </h1>
           <p className="text-sm leading-7 text-neutral-600 dark:text-neutral-400">
-            お気軽にお問い合わせください。通常2〜3営業日以内にご返信いたします。
+            {t.contact.description}
           </p>
         </div>
 

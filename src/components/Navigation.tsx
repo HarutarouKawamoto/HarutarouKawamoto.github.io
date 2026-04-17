@@ -3,6 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { useI18n } from '../contexts/I18nContext';
 import { ThemeToggle } from './ThemeToggle';
 import { LanguageSwitcher } from './LanguageSwitcher';
+import { SOCIAL_LINKS } from '../data/social';
 
 export function Navigation() {
   const { lang } = useI18n();
@@ -46,7 +47,20 @@ export function Navigation() {
           ))}
         </div>
 
-        <div className="hidden items-center gap-3 md:flex">
+        <div className="hidden items-center gap-1 md:flex">
+          {SOCIAL_LINKS.map(({ id, label, href, icon, hoverClass }) => (
+            <a
+              key={id}
+              href={href}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={label}
+              className={`flex h-8 w-8 items-center justify-center rounded-full text-neutral-600 transition-colors dark:text-neutral-400 ${hoverClass}`}
+            >
+              {icon}
+            </a>
+          ))}
+          <div className="mx-1 h-4 w-px bg-neutral-950/10 dark:bg-white/10" />
           <LanguageSwitcher />
           <ThemeToggle />
         </div>
@@ -88,7 +102,20 @@ export function Navigation() {
                 {label}
               </Link>
             ))}
-            <div className="flex items-center gap-3 pt-2">
+            <div className="flex items-center gap-1 pt-2">
+              {SOCIAL_LINKS.map(({ id, label, href, icon, hoverClass }) => (
+                <a
+                  key={id}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={label}
+                  className={`flex h-8 w-8 items-center justify-center rounded-full text-neutral-600 transition-colors dark:text-neutral-400 ${hoverClass}`}
+                >
+                  {icon}
+                </a>
+              ))}
+              <div className="mx-1 h-4 w-px bg-neutral-950/10 dark:bg-white/10" />
               <LanguageSwitcher />
               <ThemeToggle />
             </div>

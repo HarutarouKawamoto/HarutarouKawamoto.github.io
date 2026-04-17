@@ -1,5 +1,5 @@
 export type Lang = 'ja' | 'en';
-export type SkillCategory = 'language' | 'framework' | 'tool';
+export type SkillCategory = 'language' | 'framework' | 'db' | 'tool' | 'certification';
 export type SkillLevel = 1 | 2 | 3 | 4 | 5;
 export type ProductStatus = 'completed' | 'in-progress';
 export type BlogCategory = 'Featured' | 'New' | 'Learn' | 'Enjoy' | 'Real';
@@ -10,12 +10,18 @@ export interface Skill {
   category: SkillCategory;
   level?: SkillLevel;
   iconUrl?: string;
+  parentLanguage?: string;
+  acquiredDate?: string;
 }
 
 export interface Product {
   id: string;
   title: string;
   description: {
+    ja: string;
+    en: string;
+  };
+  longDescription?: {
     ja: string;
     en: string;
   };
@@ -54,16 +60,26 @@ export interface LocaleData {
     contact: string;
   };
   home: {
+    eyebrow: string;
     catchcopy: string;
     subtitle: string;
     viewWork: string;
     contactMe: string;
+    aboutMe: string;
   };
   about: {
     title: string;
+    titleGreeting: string;
+    titleName: string;
     eyebrow: string;
+    catchcopy: string;
     bio: string;
+    reasonTitle: string;
+    reasonParagraphs: string[];
+    currentTitle: string;
+    current: string;
     careerTitle: string;
+    careerItems: { date: string; description: string }[];
   };
   skills: {
     title: string;
@@ -71,7 +87,9 @@ export interface LocaleData {
     categories: {
       language: string;
       framework: string;
+      db: string;
       tool: string;
+      certification: string;
     };
     levelLabel: string;
   };
@@ -84,6 +102,8 @@ export interface LocaleData {
     };
     github: string;
     demo: string;
+    viewDetail: string;
+    backToList: string;
     noProducts: string;
   };
   blog: {
@@ -102,6 +122,7 @@ export interface LocaleData {
   contact: {
     title: string;
     eyebrow: string;
+    description: string;
     name: string;
     namePlaceholder: string;
     email: string;
@@ -131,5 +152,6 @@ export interface LocaleData {
   };
   footer: {
     copyright: string;
+    lastUpdated: string;
   };
 }

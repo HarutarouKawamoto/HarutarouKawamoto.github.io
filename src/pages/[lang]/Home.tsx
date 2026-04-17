@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useI18n } from '../../contexts/I18nContext';
+import { SOCIAL_LINKS } from '../../data/social';
 
 export function Home() {
   const { lang, t } = useI18n();
@@ -17,29 +18,54 @@ export function Home() {
         <section className="flex flex-col gap-8 md:flex-row md:items-start md:gap-16">
           <div className="flex-[3]">
             <p className="mb-3 font-mono text-xs uppercase tracking-wider text-white/60">
-              HarutarouKawamoto
+              {t.home.eyebrow}
             </p>
             <h1 className="text-balance text-4xl font-[550] tracking-tight text-white md:text-5xl">
               {t.home.catchcopy}
             </h1>
           </div>
           <div className="flex-[2] md:pt-2">
-            <p className="mb-8 max-w-[40ch] text-pretty text-base leading-7 text-white/80">
+            <p className="mb-8 text-center text-pretty text-base leading-7 text-white/80">
               {t.home.subtitle}
             </p>
-            <div className="flex flex-wrap gap-3">
+            <div className="flex flex-col gap-4">
               <Link
                 to={`/${lang}/products`}
-                className="rounded-full bg-primary px-5 py-2 text-sm font-[550] text-white transition-colors hover:bg-primary-light focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-transparent"
+                className="w-full rounded-full bg-primary px-8 py-3.5 text-center text-base font-[550] text-white transition-colors hover:bg-primary-light focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-transparent"
               >
                 {t.home.viewWork}
               </Link>
-              <Link
-                to={`/${lang}/contact`}
-                className="rounded-full bg-white/20 px-5 py-2 text-sm font-[550] text-white backdrop-blur-sm transition-colors hover:bg-white/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-transparent"
-              >
-                {t.home.contactMe}
-              </Link>
+              <div className="flex items-center justify-center gap-2">
+                <Link
+                  to={`/${lang}/about`}
+                  className="rounded-full bg-white/20 px-8 py-3.5 text-base font-[550] text-white backdrop-blur-sm transition-colors hover:bg-white/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-transparent"
+                >
+                  {t.home.aboutMe}
+                </Link>
+                <div className="mx-1 h-5 w-px bg-white/20" />
+                {SOCIAL_LINKS.map(({ id, label, href, icon, hoverClass }) => (
+                  <a
+                    key={id}
+                    href={href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={label}
+                    className={`flex items-center justify-center rounded-full px-3.5 py-3.5 text-white/60 transition-colors [&_svg]:h-6 [&_svg]:w-6 ${hoverClass}`}
+                  >
+                    {icon}
+                  </a>
+                ))}
+                <Link
+                  to={`/${lang}/contact`}
+                  aria-label="Contact"
+                  className="flex items-center justify-center rounded-full px-3.5 py-3.5 text-white/60 transition-colors hover:bg-orange-500/10 hover:text-orange-400 [&_svg]:h-6 [&_svg]:w-6"
+                >
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                    <rect width="20" height="16" x="2" y="4" rx="2" />
+                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                  </svg>
+                </Link>
+              </div>
             </div>
           </div>
         </section>

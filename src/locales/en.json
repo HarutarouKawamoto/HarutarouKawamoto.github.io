@@ -8,16 +8,47 @@
     "contact": "Contact"
   },
   "home": {
-    "catchcopy": "Frontend Engineer",
+    "eyebrow": "Aspiring Backend Engineer",
+    "catchcopy": "HARUTAROU KAWAMOTO",
     "subtitle": "I love building beautiful, user-friendly UIs with TypeScript and React. I share my learnings through blog posts.",
     "viewWork": "View My Work",
-    "contactMe": "Contact Me"
+    "contactMe": "Contact Me",
+    "aboutMe": "About Me"
   },
   "about": {
     "title": "About",
+    "titleGreeting": "Thank you for coming!",
+    "titleName": "I am Harutarou Kawamoto.",
     "eyebrow": "ABOUT ME",
-    "bio": "Hi, I'm HarutarouKawamoto. I'm learning frontend development focused on TypeScript and React. I'm passionate about designing and implementing intuitive, beautiful UIs, and I aim to grow as an engineer through continuous learning and sharing knowledge.",
-    "careerTitle": "Career"
+    "catchcopy": "An engineer who sees technology as a means of solving problems, learning full-stack development centered on the backend",
+    "bio": "Based in Kanagawa. An aspiring engineer learning web development independently. I aim to build full-stack development skills with a focus on the backend, and I'm interested in database design and test-driven development with AI.",
+    "reasonTitle": "Why I Chose Engineering",
+    "reasonParagraphs": [
+      "After withdrawing from university due to health issues and recovering at my family home, I spent time exploring what I truly wanted to dedicate myself to. It was through my close friend, a full-stack engineer working in web development, that I discovered this field. With their guidance, I began my journey by learning Python scripting.",
+      "As I progressed, my interest expanded to data processing and development with AI APIs, and I started working with web technologies like HTML/CSS, JavaScript, and SQL.",
+      "I've always had a strong fascination with 'making things' and 'seeing something respond to actions.' As a child, I loved building cities and tracks with blocks and toys, and I was amazed by games where the screen changed with button presses. In university, through Arduino development and UX design exercises, I experienced the thrill of code making things actually move and designing value from a user's perspective.",
+      "Through these experiences, I realized I find deep satisfaction in the process of writing code, understanding how things work, and iterating through trial and error. Even when things get difficult, the desire to 'create' and 'make it happen' never fades, and I've come to believe I want to create value as an engineer.",
+      "My goal is to become an engineer who can develop web services single-handedly — services that understand users' challenges and solve them with my own skills. I want to cherish the wonder I felt as a child when 'things moved in response to actions,' and contribute to building things that help people and organizations through technology."
+    ],
+    "currentTitle": "Current Focus",
+    "current": "I'm currently working on developer support tools and improving my practical development skills through test-driven development with Claude.",
+    "careerTitle": "Career",
+    "careerItems": [
+      { "date": "Mar 2022", "description": "Graduated from Kanagawa Prefectural Atsugi Seinan High School" },
+      { "date": "Apr 2022", "description": "Enrolled in Tokyo Denki University, Faculty of Systems Design Engineering" },
+      { "date": "Sep 2024", "description": "Withdrew from university. Began recovering from health issues at home" },
+      { "date": "Feb 2025", "description": "Started learning programming with Python scripting" },
+      { "date": "Apr 2025", "description": "Started learning HTML/CSS, JavaScript, and FastAPI" },
+      { "date": "Aug 2025", "description": "Took the Fundamental Information Technology Engineer Exam for the first time" },
+      { "date": "Sep 2025", "description": "Studied data science" },
+      { "date": "Oct 2025", "description": "Studied SQL and ER diagrams" },
+      { "date": "Nov 2025", "description": "Studied CLI tools and built a Discord BOT" },
+      { "date": "Jan 2026", "description": "Passed the Fundamental Information Technology Engineer Exam" },
+      { "date": "Late Jan 2026", "description": "Built a web-based customizable chatbot using the AI API" },
+      { "date": "Feb 2026", "description": "Learned practical usage of Claude (prompts, Skills, Hooks, Agents, MCP, etc.)" },
+      { "date": "Mar 2026", "description": "Learned Git and GitHub; created a public GitHub account" },
+      { "date": "Apr 2026", "description": "Started developing kudos-loop, a team development support tool" }
+    ]
   },
   "skills": {
     "title": "Skills",
@@ -25,7 +56,9 @@
     "categories": {
       "language": "Languages",
       "framework": "Frameworks",
-      "tool": "Tools"
+      "db": "Databases",
+      "tool": "Tools",
+      "certification": "Certifications"
     },
     "levelLabel": "Proficiency"
   },
@@ -38,6 +71,8 @@
     },
     "github": "GitHub",
     "demo": "Demo",
+    "viewDetail": "View Details",
+    "backToList": "Back to Products",
     "noProducts": "No products yet."
   },
   "blog": {
@@ -62,6 +97,7 @@
   "contact": {
     "title": "Contact",
     "eyebrow": "CONTACT",
+    "description": "Feel free to reach out. I typically respond within 2–3 business days.",
     "name": "Name",
     "namePlaceholder": "John Doe",
     "email": "Email",
@@ -90,6 +126,7 @@
     "backHome": "Back to Home"
   },
   "footer": {
-    "copyright": "© 2026 HarutarouKawamoto"
+    "copyright": "© 2026 HarutarouKawamoto",
+    "lastUpdated": "Last updated"
   }
 }
