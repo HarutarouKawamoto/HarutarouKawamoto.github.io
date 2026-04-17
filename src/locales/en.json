@@ -1,0 +1,95 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "skills": "Skills",
+    "products": "Products",
+    "blog": "Blog",
+    "contact": "Contact"
+  },
+  "home": {
+    "catchcopy": "Frontend Engineer",
+    "subtitle": "I love building beautiful, user-friendly UIs with TypeScript and React. I share my learnings through blog posts.",
+    "viewWork": "View My Work",
+    "contactMe": "Contact Me"
+  },
+  "about": {
+    "title": "About",
+    "eyebrow": "ABOUT ME",
+    "bio": "Hi, I'm HarutarouKawamoto. I'm learning frontend development focused on TypeScript and React. I'm passionate about designing and implementing intuitive, beautiful UIs, and I aim to grow as an engineer through continuous learning and sharing knowledge.",
+    "careerTitle": "Career"
+  },
+  "skills": {
+    "title": "Skills",
+    "eyebrow": "SKILLS",
+    "categories": {
+      "language": "Languages",
+      "framework": "Frameworks",
+      "tool": "Tools"
+    },
+    "levelLabel": "Proficiency"
+  },
+  "products": {
+    "title": "Products",
+    "eyebrow": "PRODUCTS",
+    "status": {
+      "completed": "Completed",
+      "in-progress": "In Progress"
+    },
+    "github": "GitHub",
+    "demo": "Demo",
+    "noProducts": "No products yet."
+  },
+  "blog": {
+    "title": "Blog",
+    "eyebrow": "BLOG",
+    "categories": {
+      "Featured": "Featured",
+      "New": "New",
+      "Learn": "Learn",
+      "Enjoy": "Enjoy",
+      "Real": "Real"
+    },
+    "allCategory": "All",
+    "readMore": "Read More",
+    "readingTime": "{n} min read",
+    "noPosts": "No posts found.",
+    "backToList": "Back to List",
+    "previousPage": "Previous",
+    "nextPage": "Next",
+    "showMore": "Show More"
+  },
+  "contact": {
+    "title": "Contact",
+    "eyebrow": "CONTACT",
+    "name": "Name",
+    "namePlaceholder": "John Doe",
+    "email": "Email",
+    "emailPlaceholder": "john@example.com",
+    "phone": "Phone (optional)",
+    "phonePlaceholder": "+1-000-000-0000",
+    "message": "Message",
+    "messagePlaceholder": "Write your message here (10–2000 characters)",
+    "submit": "Send Message",
+    "submitting": "Sending...",
+    "successMessage": "Thank you for your message. I'll get back to you soon.",
+    "errorMessage": "Failed to send. Please try again later.",
+    "validation": {
+      "nameRequired": "Name is required",
+      "emailRequired": "Email is required",
+      "emailInvalid": "Please enter a valid email address",
+      "phoneInvalid": "Please enter a valid phone number",
+      "messageRequired": "Message is required",
+      "messageTooShort": "Message must be at least 10 characters",
+      "messageTooLong": "Message must be 2000 characters or less"
+    }
+  },
+  "notFound": {
+    "title": "Page Not Found",
+    "message": "The page you're looking for doesn't exist or has been moved.",
+    "backHome": "Back to Home"
+  },
+  "footer": {
+    "copyright": "© 2026 HarutarouKawamoto"
+  }
+}

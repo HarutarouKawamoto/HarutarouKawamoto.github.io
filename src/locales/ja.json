@@ -1,0 +1,95 @@
+{
+  "nav": {
+    "home": "ホーム",
+    "about": "自己紹介",
+    "skills": "スキル",
+    "products": "成果物",
+    "blog": "ブログ",
+    "contact": "お問い合わせ"
+  },
+  "home": {
+    "catchcopy": "フロントエンドエンジニア",
+    "subtitle": "TypeScript・React を中心に、使いやすく美しいUIを作ることが好きです。技術の学びをブログで発信しています。",
+    "viewWork": "成果物を見る",
+    "contactMe": "お問い合わせ"
+  },
+  "about": {
+    "title": "自己紹介",
+    "eyebrow": "ABOUT ME",
+    "bio": "はじめまして、HarutarouKawamoto です。TypeScript と React を中心にフロントエンド開発を学んでいます。使いやすく美しいUIを設計・実装することに情熱を持っており、継続的な学習と技術発信を通じてエンジニアとしての成長を目指しています。",
+    "careerTitle": "経歴"
+  },
+  "skills": {
+    "title": "スキル",
+    "eyebrow": "SKILLS",
+    "categories": {
+      "language": "プログラミング言語",
+      "framework": "フレームワーク",
+      "tool": "ツール"
+    },
+    "levelLabel": "熟練度"
+  },
+  "products": {
+    "title": "成果物",
+    "eyebrow": "PRODUCTS",
+    "status": {
+      "completed": "完成",
+      "in-progress": "開発中"
+    },
+    "github": "GitHub",
+    "demo": "デモ",
+    "noProducts": "成果物はまだありません。"
+  },
+  "blog": {
+    "title": "ブログ",
+    "eyebrow": "BLOG",
+    "categories": {
+      "Featured": "特集",
+      "New": "最新",
+      "Learn": "学習",
+      "Enjoy": "楽しむ",
+      "Real": "実体験"
+    },
+    "allCategory": "すべて",
+    "readMore": "続きを読む",
+    "readingTime": "{n}分で読めます",
+    "noPosts": "記事が見つかりませんでした。",
+    "backToList": "一覧に戻る",
+    "previousPage": "前のページ",
+    "nextPage": "次のページ",
+    "showMore": "さらに表示"
+  },
+  "contact": {
+    "title": "お問い合わせ",
+    "eyebrow": "CONTACT",
+    "name": "お名前",
+    "namePlaceholder": "山田 太郎",
+    "email": "メールアドレス",
+    "emailPlaceholder": "taro@example.com",
+    "phone": "電話番号（任意）",
+    "phonePlaceholder": "090-0000-0000",
+    "message": "メッセージ",
+    "messagePlaceholder": "お問い合わせ内容をご記入ください（10〜2000文字）",
+    "submit": "送信する",
+    "submitting": "送信中...",
+    "successMessage": "お問い合わせありがとうございます。内容を確認の上、ご返信いたします。",
+    "errorMessage": "送信に失敗しました。しばらく後に再度お試しください。",
+    "validation": {
+      "nameRequired": "お名前を入力してください",
+      "emailRequired": "メールアドレスを入力してください",
+      "emailInvalid": "メールアドレスの形式が正しくありません",
+      "phoneInvalid": "電話番号の形式が正しくありません",
+      "messageRequired": "メッセージを入力してください",
+      "messageTooShort": "メッセージは10文字以上で入力してください",
+      "messageTooLong": "メッセージは2000文字以内で入力してください"
+    }
+  },
+  "notFound": {
+    "title": "ページが見つかりません",
+    "message": "お探しのページは存在しないか、移動した可能性があります。",
+    "backHome": "ホームに戻る"
+  },
+  "footer": {
+    "copyright": "© 2026 HarutarouKawamoto"
+  }
+}
