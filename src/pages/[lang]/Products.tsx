@@ -7,6 +7,11 @@ export function Products() {
   const { lang, t } = useI18n();
   const sorted = [...products].sort((a, b) => a.order - b.order);
 
+  const CARD_GRADIENT: Record<string, string> = {
+    'portfolio-site': 'from-sky-400/50',
+    'kudos-loop':     'from-orange-800/60',
+  };
+
   return (
     <main className="mx-auto max-w-7xl px-6 py-16">
       <p className="mb-3 font-mono text-xs uppercase tracking-wider text-neutral-600 dark:text-neutral-400">
@@ -38,6 +43,8 @@ export function Products() {
                       : 'bg-gradient-to-br from-neutral-800 to-neutral-950'
                   }`}
                 />
+                {/* left color gradient */}
+                <div className={`absolute inset-0 bg-gradient-to-r ${CARD_GRADIENT[product.id] ?? 'from-white/10'} to-transparent`} />
 
                 {/* content */}
                 <div className="relative flex h-full min-h-72 flex-col justify-end p-8">

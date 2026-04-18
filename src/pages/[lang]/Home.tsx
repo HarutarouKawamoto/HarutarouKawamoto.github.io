@@ -7,7 +7,7 @@ export function Home() {
 
   return (
     <main
-      className="relative flex min-h-[calc(100vh-3.5rem)] items-center bg-cover bg-center"
+      className="relative flex min-h-[calc(100vh-7rem)] items-center bg-cover bg-center"
       style={{ backgroundImage: 'url(/images/背景１.png)' }}
     >
       {/* オーバーレイ */}
@@ -16,11 +16,11 @@ export function Home() {
       {/* コンテンツ */}
       <div className="relative mx-auto w-full max-w-7xl px-6 py-16 md:py-24">
         <section className="flex flex-col gap-8 md:flex-row md:items-start md:gap-16">
-          <div className="flex-[3]">
+          <div className="flex-none">
             <p className="mb-3 font-mono text-xs uppercase tracking-wider text-white/60">
               {t.home.eyebrow}
             </p>
-            <h1 className="text-balance text-4xl font-[550] tracking-tight text-white md:text-5xl">
+            <h1 className="whitespace-nowrap text-4xl font-[550] tracking-tight text-white md:text-6xl">
               {t.home.catchcopy}
             </h1>
           </div>

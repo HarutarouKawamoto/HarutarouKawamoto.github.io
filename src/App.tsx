@@ -19,6 +19,7 @@ import { detectInitialLanguage } from './lib/i18n';
 function LangLayout() {
   const { lang } = useParams<{ lang: string }>();
   const location = useLocation();
+
   if (lang !== 'ja' && lang !== 'en') {
     return <Navigate to={`/${detectInitialLanguage()}/`} replace />;
   }

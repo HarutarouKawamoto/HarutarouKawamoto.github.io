@@ -22,21 +22,21 @@ export function Navigation() {
 
   return (
     <nav className="sticky top-0 z-50 bg-white/80 backdrop-blur-sm ring-1 ring-neutral-950/10 dark:bg-neutral-950/80 dark:ring-white/10">
-      <div className="mx-auto flex h-14 max-w-7xl items-center justify-between px-6">
+      <div className="mx-auto flex h-28 max-w-7xl items-center justify-between px-6">
         <Link
           to={`/${lang}/`}
-          className="text-sm font-[550] text-neutral-950 transition-colors hover:text-primary dark:text-white dark:hover:text-primary-light"
+          className="text-base font-[550] text-neutral-950 transition-colors hover:text-primary dark:text-white dark:hover:text-primary-light"
         >
           HarutarouKawamoto
         </Link>
 
         {/* Desktop nav */}
-        <div className="hidden items-center gap-6 md:flex">
+        <div className="hidden items-center gap-8 md:flex">
           {navLinks.map(({ label, href }) => (
             <Link
               key={href}
               to={href}
-              className={`text-sm transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary dark:focus-visible:ring-primary-light ${
+              className={`text-base transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary dark:focus-visible:ring-primary-light ${
                 isActive(href)
                   ? 'text-primary dark:text-primary-light font-medium'
                   : 'text-neutral-600 hover:text-neutral-950 dark:text-neutral-400 dark:hover:text-white'
@@ -47,7 +47,7 @@ export function Navigation() {
           ))}
         </div>
 
-        <div className="hidden items-center gap-1 md:flex">
+        <div className="hidden items-center gap-2 md:flex">
           {SOCIAL_LINKS.map(({ id, label, href, icon, hoverClass }) => (
             <a
               key={id}
@@ -55,12 +55,12 @@ export function Navigation() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label={label}
-              className={`flex h-8 w-8 items-center justify-center rounded-full text-neutral-600 transition-colors dark:text-neutral-400 ${hoverClass}`}
+              className={`flex h-10 w-10 items-center justify-center rounded-full text-neutral-600 transition-colors dark:text-neutral-400 ${hoverClass}`}
             >
               {icon}
             </a>
           ))}
-          <div className="mx-1 h-4 w-px bg-neutral-950/10 dark:bg-white/10" />
+          <div className="mx-1 h-5 w-px bg-neutral-950/10 dark:bg-white/10" />
           <LanguageSwitcher />
           <ThemeToggle />
         </div>

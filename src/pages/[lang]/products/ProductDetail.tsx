@@ -52,9 +52,13 @@ export function ProductDetail() {
 
       {/* Body */}
       <main className="mx-auto max-w-7xl px-6 py-12">
-        <p className="max-w-[65ch] text-pretty text-base leading-8 text-neutral-700 dark:text-neutral-300">
-          {description}
-        </p>
+        <div className="flex max-w-[65ch] flex-col gap-2">
+          {description.split('\n').map((paragraph, i) => (
+            <p key={i} className="text-pretty text-base leading-7 text-neutral-700 dark:text-neutral-300">
+              {paragraph}
+            </p>
+          ))}
+        </div>
 
         {(product.githubUrl || product.demoUrl) && (
           <div className="mt-8 flex flex-wrap gap-3">

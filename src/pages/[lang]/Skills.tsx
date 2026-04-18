@@ -11,9 +11,16 @@ export function Skills() {
     javascript: 'linear-gradient(135deg, rgba(250,204,21,0.22) 0%, rgba(255,255,255,0.04) 100%)',
     python:     'linear-gradient(135deg, rgba(59,130,246,0.22) 0%, rgba(250,204,21,0.18) 100%)',
     sql:        'linear-gradient(135deg, rgba(74,222,128,0.22) 0%, rgba(255,255,255,0.04) 100%)',
+    'html-css':  'linear-gradient(135deg, rgba(227,79,38,0.22) 0%, rgba(21,114,182,0.18) 100%)',
+    java:       'linear-gradient(135deg, rgba(237,139,0,0.22) 0%, rgba(176,39,39,0.18) 100%)',
+    cpp:        'linear-gradient(135deg, rgba(0,89,156,0.22) 0%, rgba(101,154,210,0.18) 100%)',
+    c:          'linear-gradient(135deg, rgba(168,185,204,0.22) 0%, rgba(0,63,145,0.18) 100%)',
+    php:        'linear-gradient(135deg, rgba(119,123,180,0.22) 0%, rgba(79,51,152,0.18) 100%)',
   };
 
-  const languages = skills.filter((s) => s.category === 'language');
+  const languages = skills
+    .filter((s) => s.category === 'language')
+    .sort((a, b) => (b.level ?? 0) - (a.level ?? 0));
   const frameworks = skills.filter((s) => s.category === 'framework');
   const dbs = skills.filter((s) => s.category === 'db' && !s.parentLanguage);
   const tools = skills.filter((s) => s.category === 'tool');
@@ -21,7 +28,7 @@ export function Skills() {
 
   return (
     <div
-      className="relative min-h-[calc(100vh-3.5rem)]"
+      className="relative min-h-[calc(100vh-7rem)]"
       style={{
         backgroundImage: 'url(/images/背景２.png)',
         backgroundSize: 'cover',
@@ -165,16 +172,40 @@ export function Skills() {
               <p className="mb-5 font-mono text-sm uppercase tracking-wider text-white/60">
                 {t.skills.categories.tool}
               </p>
-              <ul className="flex flex-wrap gap-2">
-                {tools.map((tool) => (
-                  <li
-                    key={tool.id}
-                    className="rounded-full bg-white/10 px-4 py-2 text-base text-white/90 ring-1 ring-white/20 backdrop-blur-sm"
-                  >
-                    {tool.name}
-                  </li>
-                ))}
-              </ul>
+              <div className="overflow-hidden rounded-xl ring-1 ring-white/20 backdrop-blur-sm">
+                {[
+                  { group: '開発環境',           ids: ['vscode', 'cmd'] },
+                  { group: 'バージョン管理・CI/CD', ids: ['git', 'github-cli', 'github-actions'] },
+                  { group: 'コンテナ',           ids: ['docker', 'docker-compose'] },
+                  { group: 'ビルド',             ids: ['vite'] },
+                  { group: 'AI / CLI',           ids: ['claude-cli', 'gemini-cli'] },
+                  { group: 'API',                ids: ['gemini-api', 'openai-api', 'anki-api', 'discord-dev'] },
+                  { group: 'セキュリティ',        ids: ['jwt', 'bcrypt'] },
+                  { group: 'その他',             ids: ['postman', 'formspree', 'obsidian'] },
+                ].map(({ group, ids }, i) => {
+                  const groupTools = ids.map((id) => tools.find((t) => t.id === id)).filter(Boolean);
+                  if (groupTools.length === 0) return null;
+                  return (
+                    <div
+                      key={group}
+                      className={`flex flex-col gap-1 px-5 py-3 sm:flex-row sm:items-center sm:gap-0 ${
+                        i !== 0 ? 'border-t border-white/10' : ''
+                      }`}
+                    >
+                      <p className="w-44 shrink-0 text-sm font-[550] text-white/70">
+                        {group}
+                      </p>
+                      <ul className="flex flex-wrap gap-2">
+                        {groupTools.map((tool) => (
+                          <li key={tool!.id} className="text-sm text-white/80">
+                            {tool!.name}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  );
+                })}
+              </div>
             </section>
           )}
 
@@ -184,15 +215,15 @@ export function Skills() {
               <p className="mb-5 font-mono text-sm uppercase tracking-wider text-white/60">
                 {t.skills.categories.certification}
               </p>
-              <ul className="flex flex-wrap gap-3">
+              <ul className="grid grid-cols-1 gap-4">
                 {certifications.map((cert) => (
                   <li
                     key={cert.id}
-                    className="rounded-xl bg-white/10 px-5 py-4 ring-1 ring-white/20 backdrop-blur-sm"
+                    className="flex items-center justify-between rounded-xl bg-white/10 px-8 py-6 ring-1 ring-white/20 backdrop-blur-sm"
                   >
-                    <p className="text-base font-[550] text-white">{cert.name}</p>
+                    <p className="text-xl font-[550] text-white">{cert.name}</p>
                     {cert.acquiredDate && (
-                      <p className="mt-1 text-sm text-white/60">{cert.acquiredDate}</p>
+                      <p className="text-sm text-white/60">{cert.acquiredDate}</p>
                     )}
                   </li>
                 ))}
