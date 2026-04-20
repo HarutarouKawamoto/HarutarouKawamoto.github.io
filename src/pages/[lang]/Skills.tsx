@@ -2,9 +2,17 @@ import { useI18n } from '../../contexts/I18nContext';
 import { skills } from '../../data/skills';
 
 export function Skills() {
-  const { t } = useI18n();
+  const { lang, t } = useI18n();
 
   const LEVEL_COLORS = ['#FFFFFF', '#FADCC1', '#F4BA83', '#EF9744', '#E97406'];
+
+  const LEVEL_DEFINITIONS = [
+    { level: 1, label: { ja: '入門',     en: 'Beginner'     }, description: { ja: '教材に沿ってコードを書き、動かせる', en: 'Can write and run code following tutorials' } },
+    { level: 2, label: { ja: '基礎',     en: 'Basic'        }, description: { ja: '教材を離れ、既存のコードを読んで理解・改変できる。公式ドキュメントで自己解決できる', en: 'Can read and modify existing code independently. Can solve problems using official docs' } },
+    { level: 3, label: { ja: '自走',     en: 'Independent'  }, description: { ja: '技術選定・設計・実装・デプロイまで一人で完結できる。Gitでソース管理ができる', en: 'Can handle tech selection, design, implementation and deployment solo. Manages source with Git' } },
+    { level: 4, label: { ja: '応用',     en: 'Applied'      }, description: { ja: 'OSSや他者のコードを読んで学習・応用できる。パフォーマンスや設計を意識した実装ができる', en: 'Can learn from OSS and others\' code. Implements with performance and design in mind' } },
+    { level: 5, label: { ja: '実務自走', en: 'Professional' }, description: { ja: '仕様から実装・テスト・リリースまで一人で完結できる。技術的な質問に根拠をもって回答できる', en: 'Completes from spec to release independently. Answers technical questions with clear reasoning' } },
+  ];
 
   const LANGUAGE_CARD_BG: Record<string, string> = {
     typescript: 'linear-gradient(135deg, rgba(56,189,248,0.22) 0%, rgba(255,255,255,0.04) 100%)',
@@ -37,7 +45,7 @@ export function Skills() {
         backgroundRepeat: 'no-repeat',
       }}
     >
-      <div className="absolute inset-0 bg-black/50" />
+      <div className="absolute inset-0 bg-black/20 dark:bg-black/60" />
       <main className="relative mx-auto max-w-7xl px-6 py-16">
         <p className="mb-3 font-mono text-sm uppercase tracking-wider text-white/60">
           {t.skills.eyebrow}
@@ -49,6 +57,32 @@ export function Skills() {
         <div className="flex flex-col gap-12">
           {/* Languages + linked Frameworks */}
           <section>
+            <p className="mb-5 font-mono text-sm uppercase tracking-wider text-white/60">
+              {t.skills.levelLabel}
+            </p>
+            {/* レベル定義表 */}
+            <div className="mb-6 overflow-hidden rounded-xl ring-1 ring-white/20 backdrop-blur-sm">
+              {LEVEL_DEFINITIONS.map((def, i) => (
+                <div
+                  key={def.level}
+                  className={`flex items-baseline gap-4 px-5 py-3 ${i !== 0 ? 'border-t border-white/10' : ''}`}
+                >
+                  <div className="flex shrink-0 items-center gap-2">
+                    <div
+                      className="h-2.5 w-2.5 rounded-full"
+                      style={{ backgroundColor: LEVEL_COLORS[def.level - 1] }}
+                    />
+                    <span className="w-16 text-sm font-[550] text-white/90">
+                      {def.label[lang]}
+                    </span>
+                  </div>
+                  <p className="text-sm leading-relaxed text-white/60">
+                    {def.description[lang]}
+                  </p>
+                </div>
+              ))}
+            </div>
+
             <p className="mb-5 font-mono text-sm uppercase tracking-wider text-white/60">
               {t.skills.categories.language}
             </p>

@@ -20,7 +20,7 @@ export function Home() {
             <p className="mb-3 font-mono text-xs uppercase tracking-wider text-white/60">
               {t.home.eyebrow}
             </p>
-            <h1 className="whitespace-nowrap text-4xl font-[550] tracking-tight text-white md:text-6xl">
+            <h1 className="text-4xl font-[550] tracking-tight text-white md:text-6xl md:whitespace-nowrap">
               {t.home.catchcopy}
             </h1>
           </div>

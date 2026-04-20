@@ -12,7 +12,7 @@ export function StatusBadge({ status }: StatusBadgeProps) {
 
   if (status === 'completed') {
     return (
-      <span className="inline-flex items-center rounded-full bg-neutral-950/10 px-2.5 py-0.5 text-xs font-medium text-neutral-950 dark:bg-white/10 dark:text-white">
+      <span className="inline-flex items-center rounded-full bg-white/20 px-2.5 py-0.5 text-xs font-medium text-white ring-1 ring-white/30">
         {label}
       </span>
     );

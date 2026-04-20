@@ -12,6 +12,7 @@ export interface Skill {
   iconUrl?: string;
   parentLanguage?: string;
   acquiredDate?: string;
+  capabilities?: { ja: string[]; en: string[] };
 }
 
 export interface Product {

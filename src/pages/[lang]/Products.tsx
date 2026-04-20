@@ -7,9 +7,9 @@ export function Products() {
   const { lang, t } = useI18n();
   const sorted = [...products].sort((a, b) => a.order - b.order);
 
-  const CARD_GRADIENT: Record<string, string> = {
-    'portfolio-site': 'from-sky-400/50',
-    'kudos-loop':     'from-orange-800/60',
+  const CARD_COLOR: Record<string, string> = {
+    'portfolio-site': 'rgba(11, 95, 177, 0.45)',
+    'kudos-loop':     'rgba(233, 116, 6, 0.45)',
   };
 
   return (
@@ -27,36 +27,39 @@ export function Products() {
         <ul className="flex flex-col gap-6">
           {sorted.map((product) => (
             <li key={product.id}>
-              <article
-                className="relative min-h-72 overflow-hidden rounded-2xl"
-                style={
-                  product.imageUrl
-                    ? { backgroundImage: `url(${product.imageUrl})`, backgroundSize: 'cover', backgroundPosition: 'center' }
-                    : {}
-                }
-              >
-                {/* overlay */}
-                <div
-                  className={`absolute inset-0 ${
-                    product.imageUrl
-                      ? 'bg-gradient-to-t from-neutral-950/90 via-neutral-950/50 to-neutral-950/20'
-                      : 'bg-gradient-to-br from-neutral-800 to-neutral-950'
-                  }`}
-                />
-                {/* left color gradient */}
-                <div className={`absolute inset-0 bg-gradient-to-r ${CARD_GRADIENT[product.id] ?? 'from-white/10'} to-transparent`} />
+              <article className="relative min-h-72 overflow-hidden rounded-2xl bg-neutral-900">
+                {/* ぼかし背景画像 */}
+                {product.imageUrl && (
+                  <img
+                    src={product.imageUrl}
+                    alt=""
+                    aria-hidden="true"
+                    className="absolute inset-0 h-full w-full object-cover opacity-20 blur-[1px]"
+                  />
+                )}
+                {/* カラーオーバーレイ */}
+                {CARD_COLOR[product.id] && (
+                  <div
+                    className="absolute inset-0"
+                    style={{ background: `linear-gradient(to right, ${CARD_COLOR[product.id]}, transparent)` }}
+                  />
+                )}
+                {/* 暗さオーバーレイ */}
+                <div className="absolute inset-0 bg-gradient-to-t from-neutral-950/90 via-neutral-950/60 to-neutral-950/30" />
 
-                {/* content */}
-                <div className="relative flex h-full min-h-72 flex-col justify-end p-8">
-                  <div className="mb-3 flex items-center gap-3">
-                    <StatusBadge status={product.status} />
+                {/* コンテンツ */}
+                <div className="relative flex h-full min-h-72 flex-col justify-end gap-6 p-8">
+                  <div>
+                    <div className="mb-3">
+                      <StatusBadge status={product.status} />
+                    </div>
+                    <h2 className="mb-2 text-2xl font-[550] tracking-tight text-white md:text-3xl">
+                      {product.title}
+                    </h2>
+                    <p className="max-w-[60ch] text-pretty text-base leading-7 text-white">
+                      {product.description[lang]}
+                    </p>
                   </div>
-                  <h2 className="mb-2 text-2xl font-[550] tracking-tight text-white md:text-3xl">
-                    {product.title}
-                  </h2>
-                  <p className="mb-5 max-w-[60ch] text-pretty text-base leading-7 text-white/70">
-                    {product.description[lang]}
-                  </p>
                   <div className="flex flex-wrap items-center justify-between gap-4">
                     <ul className="flex flex-wrap gap-2">
                       {product.tags.map((tag) => (

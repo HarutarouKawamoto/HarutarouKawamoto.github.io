@@ -6,11 +6,11 @@ export const skills: Skill[] = [
   { id: 'javascript', name: 'JavaScript', category: 'language', level: 4 },
   { id: 'python', name: 'Python', category: 'language', level: 3 },
   { id: 'sql', name: 'SQL', category: 'language', level: 2 },
-  { id: 'html-css', name: 'HTML / CSS', category: 'language', level: 3 },
+  { id: 'html-css', name: 'HTML / CSS', category: 'language', level: 4 },
   { id: 'java', name: 'Java', category: 'language', level: 1 },
   { id: 'cpp', name: 'C++', category: 'language', level: 1 },
   { id: 'c', name: 'C', category: 'language', level: 1 },
-  { id: 'php', name: 'PHP', category: 'language', level: 2 },
+  { id: 'php', name: 'PHP', category: 'language', level: 1 },
 
   // Frameworks — linked to parent language
   { id: 'react', name: 'React', category: 'framework', parentLanguage: 'typescript' },
