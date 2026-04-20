@@ -19,14 +19,14 @@ export function About() {
         <div className="absolute inset-0 bg-gradient-to-b from-transparent to-white dark:to-neutral-950" />
         <div className="relative mx-auto flex min-h-[inherit] max-w-7xl flex-col items-end justify-end px-6 pt-40 pb-8">
           <div className="text-right">
-            <p className="mb-3 font-mono text-xs uppercase tracking-wider text-white/60">
+            <p className="mb-3 font-mono text-xs uppercase tracking-wider text-neutral-950/60 dark:text-white/60">
               {t.about.eyebrow}
             </p>
             <div className="mb-2 flex flex-wrap items-baseline justify-end gap-x-3">
-              <p className="text-lg font-normal text-white/70">
+              <p className="text-lg font-normal text-neutral-950/70 dark:text-white/70">
                 {t.about.titleGreeting}
               </p>
-              <h1 className="text-4xl font-[550] tracking-tight text-white md:text-5xl">
+              <h1 className="text-4xl font-[550] tracking-tight text-neutral-950 dark:text-white md:text-5xl">
                 {t.about.titleName}
               </h1>
             </div>
