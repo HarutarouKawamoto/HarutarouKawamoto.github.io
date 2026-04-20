@@ -30,7 +30,7 @@ export function Skills() {
     <div
       className="relative min-h-[calc(100vh-7rem)]"
       style={{
-        backgroundImage: 'url(/images/背景２.png)',
+        backgroundImage: 'url(/images/背景２.webp)',
         backgroundSize: 'cover',
         backgroundPosition: 'center 60%',
         backgroundAttachment: 'fixed',

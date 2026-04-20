@@ -8,7 +8,7 @@ export function Home() {
   return (
     <main
       className="relative flex min-h-[calc(100vh-7rem)] items-center bg-cover bg-center"
-      style={{ backgroundImage: 'url(/images/背景１.png)' }}
+      style={{ backgroundImage: 'url(/images/背景１.webp)' }}
     >
       {/* オーバーレイ */}
       <div className="absolute inset-0 bg-black/50" />

@@ -10,7 +10,7 @@ export function About() {
       <div
         className="relative min-h-[40rem]"
         style={{
-          backgroundImage: 'url(/images/about背景.png)',
+          backgroundImage: 'url(/images/about背景.webp)',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
         }}
