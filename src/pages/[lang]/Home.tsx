@@ -16,7 +16,7 @@ export function Home() {
       {/* コンテンツ */}
       <div className="relative mx-auto w-full max-w-7xl px-6 py-16 md:py-24">
         <section className="flex flex-col gap-8 md:flex-row md:items-start md:gap-16">
-          <div className="flex-none">
+          <div className="flex-none text-center md:text-left">
             <p className="mb-3 font-mono text-xs uppercase tracking-wider text-white/60">
               {t.home.eyebrow}
             </p>
