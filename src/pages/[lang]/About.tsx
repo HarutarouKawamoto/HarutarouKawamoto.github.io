@@ -38,9 +38,9 @@ export function About() {
       </div>
 
       {/* Bio + Career */}
-      <main className="mx-auto max-w-7xl px-6 py-16">
+      <main className="mx-auto max-w-7xl px-6 py-8">
         {/* Bio */}
-        <p className="mb-16 ml-auto max-w-3xl text-base leading-7 text-pretty text-neutral-700 dark:text-neutral-300">
+        <p className="mb-8 ml-auto max-w-3xl text-base leading-7 text-pretty text-neutral-700 dark:text-neutral-300">
           {t.about.bio}
         </p>
 
