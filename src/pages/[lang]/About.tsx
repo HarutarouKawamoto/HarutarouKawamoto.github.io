@@ -8,7 +8,7 @@ export function About() {
     <div>
       {/* Hero */}
       <div
-        className="relative min-h-[40rem]"
+        className="relative min-h-[85vh] md:min-h-[40rem]"
         style={{
           backgroundImage: 'url(/images/about背景.webp)',
           backgroundSize: 'cover',
@@ -30,7 +30,7 @@ export function About() {
                 {t.about.titleName}
               </h1>
             </div>
-            <p className="mt-4 text-lg font-bold leading-relaxed text-sky-300">
+            <p className="mt-4 text-balance text-lg font-bold leading-relaxed text-sky-300">
               {t.about.catchcopy}
             </p>
           </div>
