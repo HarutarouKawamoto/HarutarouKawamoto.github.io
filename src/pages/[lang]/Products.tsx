@@ -8,6 +8,8 @@ export function Products() {
   const sorted = [...products].sort((a, b) => a.order - b.order);
 
   const CARD_COLOR: Record<string, string> = {
+    haname:           'rgba(219, 112, 147, 0.45)',
+    sumire:           'rgba(106, 79, 158, 0.45)',
     'portfolio-site': 'rgba(11, 95, 177, 0.45)',
     'kudos-loop':     'rgba(233, 116, 6, 0.45)',
   };
@@ -54,7 +56,15 @@ export function Products() {
                       <StatusBadge status={product.status} />
                     </div>
                     <h2 className="mb-2 text-2xl font-[550] tracking-tight text-white md:text-3xl">
-                      {product.title}
+                      {product.logoUrl ? (
+                        <img
+                          src={product.logoUrl}
+                          alt={product.title}
+                          className="h-12 w-auto drop-shadow-[0_0_8px_rgba(255,255,255,0.35)] md:h-14"
+                        />
+                      ) : (
+                        product.title
+                      )}
                     </h2>
                     <p className="max-w-[60ch] text-pretty text-base leading-7 text-white">
                       {product.description[lang]}

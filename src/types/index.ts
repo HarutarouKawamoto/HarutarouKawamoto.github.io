@@ -30,6 +30,8 @@ export interface Product {
   tags: string[];
   githubUrl?: string;
   demoUrl?: string;
+  siteUrl?: string;
+  logoUrl?: string;
   imageUrl?: string;
   order: number;
 }
@@ -103,6 +105,7 @@ export interface LocaleData {
     };
     github: string;
     demo: string;
+    site: string;
     viewDetail: string;
     backToList: string;
     noProducts: string;

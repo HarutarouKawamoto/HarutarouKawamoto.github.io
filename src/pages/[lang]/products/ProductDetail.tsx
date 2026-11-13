@@ -35,7 +35,11 @@ export function ProductDetail() {
             <StatusBadge status={product.status} />
           </div>
           <h1 className="mb-4 text-4xl font-[550] tracking-tight text-white md:text-5xl">
-            {product.title}
+            {product.logoUrl ? (
+              <img src={product.logoUrl} alt={product.title} className="h-14 w-auto drop-shadow-[0_0_10px_rgba(255,255,255,0.35)] md:h-20" />
+            ) : (
+              product.title
+            )}
           </h1>
           <ul className="flex flex-wrap gap-2">
             {product.tags.map((tag) => (
@@ -60,7 +64,7 @@ export function ProductDetail() {
           ))}
         </div>
 
-        {(product.githubUrl || product.demoUrl) && (
+        {(product.githubUrl || product.siteUrl || product.demoUrl) && (
           <div className="mt-8 flex flex-wrap gap-3">
             {product.githubUrl && (
               <a
@@ -71,6 +75,18 @@ export function ProductDetail() {
               >
                 {t.products.github}
               </a>
+            )}
+            {product.siteUrl && (
+              <span className="inline-flex rounded-full p-px shadow-sm ring-1 ring-neutral-950/10 dark:ring-white/10">
+                <a
+                  href={product.siteUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="rounded-full bg-white px-5 py-2 text-sm font-[550] text-neutral-950 transition-colors hover:bg-neutral-50 dark:bg-neutral-900 dark:text-white dark:hover:bg-neutral-800"
+                >
+                  {t.products.site}
+                </a>
+              </span>
             )}
             {product.demoUrl && (
               <span className="inline-flex rounded-full p-px shadow-sm ring-1 ring-neutral-950/10 dark:ring-white/10">
