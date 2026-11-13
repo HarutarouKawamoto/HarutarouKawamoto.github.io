@@ -111,6 +111,8 @@ interface Product {
   tags: string[];          // 使用技術タグ（例: ["TypeScript", "Tailwind CSS"]）
   githubUrl?: string;      // GitHubリポジトリURL（任意）
   demoUrl?: string;        // デモURL（任意）
+  siteUrl?: string;        // 紹介サイトURL（任意）
+  logoUrl?: string;        // ロゴ画像パス（暗い背景用。指定時は作品名の代わりに表示）
   imageUrl?: string;       // サムネイル画像パス（任意）
   order: number;           // 表示順（昇順）
 }

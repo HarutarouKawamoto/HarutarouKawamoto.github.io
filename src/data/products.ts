@@ -2,6 +2,44 @@ import type { Product } from '../types';
 
 export const products: Product[] = [
   {
+    id: 'haname',
+    title: 'HanaME',
+    description: {
+      ja: 'AI が書いた大量の .md を、要約せずに読み切るためのローカルビューア。分からない文にその場で質問を書き込み、まとめて AI に聞ける。',
+      en: 'A local viewer for reading through piles of AI-written .md files without summarizing them. Write questions right on the sentences you don\'t understand, then ask AI about them all at once.',
+    },
+    longDescription: {
+      ja: 'AI を使った開発では、レビュー・設計・調査の .md が次々に生成され、読む側が追い付かなくなります。\nHanaME（花見）は、分からない文をクリックして質問を書き込み、すべての質問を1つの指示文として AI に渡すローカルビューアです。AI の回答は .md に直接書き込まれ、画面がすぐ更新されます。\nAPI キーも課金も不要で、Claude Code・Codex・Cursor・ブラウザの AI チャットなど、いま使っている AI をそのまま使えます。\n質問と回答は .md に普通の引用として残るため、GitHub や他のエディタでもそのまま読めます。',
+      en: 'In AI-assisted development, review, design, and research .md files pile up faster than anyone can read them.\nHanaME is a local viewer where you click a sentence you don\'t understand, write a question on it, and hand every question to AI as a single prompt. The answers are written straight into the .md files, and the screen updates immediately.\nNo API key or extra billing is needed: it works with the AI you already use, such as Claude Code, Codex, Cursor, or a browser-based AI chat.\nQuestions and answers stay in the .md files as ordinary blockquotes, so they read naturally on GitHub and in any other editor.',
+    },
+    imageUrl: '/images/haname-og.jpg',
+    logoUrl: '/images/haname-logo.png',
+    status: 'completed',
+    tags: ['JavaScript', 'Node.js', 'markdown-it', 'highlight.js', 'Mermaid', 'Claude'],
+    githubUrl: 'https://github.com/HarutarouKawamoto/haname',
+    siteUrl: 'https://harutaroukawamoto.github.io/haname/',
+    order: 1,
+  },
+  {
+    id: 'sumire',
+    title: 'SumiRE',
+    description: {
+      ja: '自分のプロジェクトのコードを、そのまま写経のお手本にするローカルのタイピングツール。薄く表示されたコードの上からなぞって、指で覚える。',
+      en: 'A local typing tool that turns the code in your own project into tracing practice. Type over the faded code and learn it with your fingers.',
+    },
+    longDescription: {
+      ja: 'AI が書いたコードは、読んで「分かった」つもりでも、何も見ずには書けません。\nSumiRE は、フォルダで「sumire」と打つだけで、中のスクリプトを写経のノートに変えるローカルツールです。薄く表示されたコードの上にそのまま打ち、インデント・空行・コメントは自動で飛ばします。\n打ち間違えた文字は赤く残り、Backspace で消して打ち直すタイプライター式です。ファイルは読むだけで、書き換えません。\n同じ作者の HanaME と対になるツールで、HanaME は .md を「頭で」理解し、SumiRE はコードを「指で」覚えます。',
+      en: 'You may feel you understand AI-written code after reading it, yet still be unable to write it without looking.\nSumiRE is a local tool that turns the scripts in a folder into a tracing notebook — just type "sumire" in that folder. You type directly over the faded code, and indentation, blank lines, and comments are skipped automatically.\nMistyped characters stay red until you Backspace and retype them, typewriter-style. Files are only read, never modified.\nIt is a companion to HanaME by the same author: HanaME helps you understand .md files with your head, and SumiRE helps you learn code with your fingers.',
+    },
+    imageUrl: '/images/sumire-og.jpg',
+    logoUrl: '/images/sumire-logo.webp',
+    status: 'completed',
+    tags: ['TypeScript', 'Vite', 'Node.js', 'Claude'],
+    githubUrl: 'https://github.com/HarutarouKawamoto/sumire',
+    siteUrl: 'https://harutaroukawamoto.github.io/sumire/',
+    order: 2,
+  },
+  {
     id: 'portfolio-site',
     title: 'Portfolio-Blog Site',
     description: {
@@ -16,7 +54,7 @@ export const products: Product[] = [
     status: 'completed',
     tags: ['TypeScript', 'React', 'Tailwind CSS', 'Vite', 'Claude'],
     githubUrl: 'https://github.com/HarutarouKawamoto/HarutarouKawamoto.github.io',
-    order: 1,
+    order: 4,
   },
   {
     id: 'kudos-loop',
@@ -33,6 +71,6 @@ export const products: Product[] = [
     status: 'in-progress',
     tags: ['Next.js (App Router)', 'NestJS', 'TypeScript', 'PostgreSQL', 'Docker', 'Docker Compose', 'GitHub Actions'],
     githubUrl: 'https://github.com/HarutarouKawamoto/kudos-loop',
-    order: 2,
+    order: 3,
   },
 ];

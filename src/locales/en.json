@@ -47,7 +47,9 @@
       { "date": "Late Jan 2026", "description": "Built a web-based customizable chatbot using the AI API" },
       { "date": "Feb 2026", "description": "Learned practical usage of Claude (prompts, Skills, Hooks, Agents, MCP, etc.)" },
       { "date": "Mar 2026", "description": "Learned Git and GitHub; created a public GitHub account" },
-      { "date": "Apr 2026", "description": "Started developing kudos-loop, a team development support tool" }
+      { "date": "Apr 2026", "description": "Started developing kudos-loop, a team development support tool" },
+      { "date": "Early Nov 2026", "description": "Released HanaME, an API-free viewer for reading through Markdown files and asking AI about them all at once" },
+      { "date": "Early Nov 2026", "description": "Released SumiRE, a typing tool for learning code by tracing it" }
     ]
   },
   "skills": {
@@ -71,6 +73,7 @@
     },
     "github": "GitHub",
     "demo": "Demo",
+    "site": "Website",
     "viewDetail": "View Details",
     "backToList": "Back to Products",
     "noProducts": "No products yet."

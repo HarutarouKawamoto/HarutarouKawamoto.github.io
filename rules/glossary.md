@@ -450,6 +450,8 @@ stateDiagram-v2
 - `tags`: 使用技術タグ配列
 - `githubUrl?`: GitHubリポジトリURL
 - `demoUrl?`: デモURL
+- `siteUrl?`: 紹介サイトURL（作品ごとの紹介ページ）
+- `logoUrl?`: ロゴ画像パス（暗い背景用。指定時は一覧カードと詳細ページで作品名の代わりに表示）
 - `imageUrl?`: サムネイル画像パス（省略時はデフォルト画像を表示）
 - `order`: 表示順（数値。小さい方が上位に表示）
 
