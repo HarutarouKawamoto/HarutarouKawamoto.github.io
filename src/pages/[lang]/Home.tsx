@@ -17,7 +17,8 @@ export function Home() {
       <div className="relative mx-auto w-full max-w-7xl px-6 py-16 md:py-24">
         <section className="flex flex-col gap-8 md:flex-row md:items-start md:gap-16">
           <div className="flex-none text-center md:text-left">
-            <p className="mb-3 font-mono text-xs uppercase tracking-wider text-white/60">
+            {/* 肩書に技術名（TypeScript / Node.js）を含むため、大文字化せず正しい表記で出す */}
+            <p className="mb-3 font-mono text-xs tracking-wider text-white/60">
               {t.home.eyebrow}
             </p>
             <h1 className="text-4xl font-[550] tracking-tight text-white md:text-6xl md:whitespace-nowrap">
@@ -38,7 +39,7 @@ export function Home() {
               <div className="flex items-center justify-center gap-2">
                 <Link
                   to={`/${lang}/about`}
-                  className="rounded-full bg-white/20 px-8 py-3.5 text-base font-[550] text-white backdrop-blur-sm transition-colors hover:bg-white/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-transparent"
+                  className="whitespace-nowrap rounded-full bg-white/20 px-8 py-3.5 text-base font-[550] text-white backdrop-blur-sm transition-colors hover:bg-white/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-transparent"
                 >
                   {t.home.aboutMe}
                 </Link>

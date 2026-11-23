@@ -1,6 +1,7 @@
 import { Link, useParams, Navigate } from 'react-router-dom';
 import { useI18n } from '../../../contexts/I18nContext';
 import { StatusBadge } from '../../../components/StatusBadge';
+import { ProductTitle } from '../../../components/ProductTitle';
 import { products } from '../../../data/products';
 
 export function ProductDetail() {
@@ -35,11 +36,10 @@ export function ProductDetail() {
             <StatusBadge status={product.status} />
           </div>
           <h1 className="mb-4 text-4xl font-[550] tracking-tight text-white md:text-5xl">
-            {product.logoUrl ? (
-              <img src={product.logoUrl} alt={product.title} className="h-14 w-auto drop-shadow-[0_0_10px_rgba(255,255,255,0.35)] md:h-20" />
-            ) : (
-              product.title
-            )}
+            <ProductTitle
+              product={product}
+              logoClassName="h-14 w-auto drop-shadow-[0_0_10px_rgba(255,255,255,0.35)] md:h-20"
+            />
           </h1>
           <ul className="flex flex-wrap gap-2">
             {product.tags.map((tag) => (

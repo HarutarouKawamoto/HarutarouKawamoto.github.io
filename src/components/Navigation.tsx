@@ -6,17 +6,17 @@ import { LanguageSwitcher } from './LanguageSwitcher';
 import { SOCIAL_LINKS } from '../data/social';
 
 export function Navigation() {
-  const { lang } = useI18n();
+  const { lang, t } = useI18n();
   const location = useLocation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navLinks = [
-    { label: 'About', href: `/${lang}/about` },
-    { label: 'Skills', href: `/${lang}/skills` },
-    { label: 'Products', href: `/${lang}/products` },
-    { label: 'Blog', href: `/${lang}/blog` },
-    { label: 'Contact', href: `/${lang}/contact` },
-  ] as const;
+    { label: t.nav.about, href: `/${lang}/about` },
+    { label: t.nav.skills, href: `/${lang}/skills` },
+    { label: t.nav.products, href: `/${lang}/products` },
+    { label: t.nav.blog, href: `/${lang}/blog` },
+    { label: t.nav.contact, href: `/${lang}/contact` },
+  ];
 
   const isActive = (href: string) => location.pathname === href;
 

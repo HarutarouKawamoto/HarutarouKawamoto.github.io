@@ -3,16 +3,8 @@ import { skills } from '../../data/skills';
 
 export function Skills() {
   const { lang, t } = useI18n();
-
-  const LEVEL_COLORS = ['#FFFFFF', '#FADCC1', '#F4BA83', '#EF9744', '#E97406'];
-
-  const LEVEL_DEFINITIONS = [
-    { level: 1, label: { ja: '入門',     en: 'Beginner'     }, description: { ja: '教材に沿ってコードを書き、動かせる', en: 'Can write and run code following tutorials' } },
-    { level: 2, label: { ja: '基礎',     en: 'Basic'        }, description: { ja: '教材を離れ、既存のコードを読んで理解・改変できる。公式ドキュメントで自己解決できる', en: 'Can read and modify existing code independently. Can solve problems using official docs' } },
-    { level: 3, label: { ja: '自走',     en: 'Independent'  }, description: { ja: '技術選定・設計・実装・デプロイまで一人で完結できる。Gitでソース管理ができる', en: 'Can handle tech selection, design, implementation and deployment solo. Manages source with Git' } },
-    { level: 4, label: { ja: '応用',     en: 'Applied'      }, description: { ja: 'OSSや他者のコードを読んで学習・応用できる。パフォーマンスや設計を意識した実装ができる', en: 'Can learn from OSS and others\' code. Implements with performance and design in mind' } },
-    { level: 5, label: { ja: '実務自走', en: 'Professional' }, description: { ja: '仕様から実装・テスト・リリースまで一人で完結できる。技術的な質問に根拠をもって回答できる', en: 'Completes from spec to release independently. Answers technical questions with clear reasoning' } },
-  ];
+  // 言語カードの map 内で `lang` が言語エンティティを指すため、表示言語は別名で持つ
+  const currentLang = lang;
 
   const LANGUAGE_CARD_BG: Record<string, string> = {
     typescript: 'linear-gradient(135deg, rgba(56,189,248,0.22) 0%, rgba(255,255,255,0.04) 100%)',
@@ -21,14 +13,10 @@ export function Skills() {
     sql:        'linear-gradient(135deg, rgba(74,222,128,0.22) 0%, rgba(255,255,255,0.04) 100%)',
     'html-css':  'linear-gradient(135deg, rgba(227,79,38,0.22) 0%, rgba(21,114,182,0.18) 100%)',
     java:       'linear-gradient(135deg, rgba(237,139,0,0.22) 0%, rgba(176,39,39,0.18) 100%)',
-    cpp:        'linear-gradient(135deg, rgba(0,89,156,0.22) 0%, rgba(101,154,210,0.18) 100%)',
-    c:          'linear-gradient(135deg, rgba(168,185,204,0.22) 0%, rgba(0,63,145,0.18) 100%)',
-    php:        'linear-gradient(135deg, rgba(119,123,180,0.22) 0%, rgba(79,51,152,0.18) 100%)',
   };
 
-  const languages = skills
-    .filter((s) => s.category === 'language')
-    .sort((a, b) => (b.level ?? 0) - (a.level ?? 0));
+  // 並びは skills.ts の配列順（見せたい順に並べてある）
+  const languages = skills.filter((s) => s.category === 'language');
   const frameworks = skills.filter((s) => s.category === 'framework');
   const dbs = skills.filter((s) => s.category === 'db' && !s.parentLanguage);
   const tools = skills.filter((s) => s.category === 'tool');
@@ -45,7 +33,8 @@ export function Skills() {
         backgroundRepeat: 'no-repeat',
       }}
     >
-      <div className="absolute inset-0 bg-black/20 dark:bg-black/60" />
+      {/* 背景写真が明るいため、ライトモードでも白文字が読める濃さにする */}
+      <div className="absolute inset-0 bg-black/50 dark:bg-black/60" />
       <main className="relative mx-auto max-w-7xl px-6 py-16">
         <p className="mb-3 font-mono text-sm uppercase tracking-wider text-white/60">
           {t.skills.eyebrow}
@@ -57,32 +46,6 @@ export function Skills() {
         <div className="flex flex-col gap-12">
           {/* Languages + linked Frameworks */}
           <section>
-            <p className="mb-5 font-mono text-sm uppercase tracking-wider text-white/60">
-              {t.skills.levelLabel}
-            </p>
-            {/* レベル定義表 */}
-            <div className="mb-6 overflow-hidden rounded-xl ring-1 ring-white/20 backdrop-blur-sm">
-              {LEVEL_DEFINITIONS.map((def, i) => (
-                <div
-                  key={def.level}
-                  className={`flex items-baseline gap-4 px-5 py-3 ${i !== 0 ? 'border-t border-white/10' : ''}`}
-                >
-                  <div className="flex shrink-0 items-center gap-2">
-                    <div
-                      className="h-2.5 w-2.5 rounded-full"
-                      style={{ backgroundColor: LEVEL_COLORS[def.level - 1] }}
-                    />
-                    <span className="w-16 text-sm font-[550] text-white/90">
-                      {def.label[lang]}
-                    </span>
-                  </div>
-                  <p className="text-sm leading-relaxed text-white/60">
-                    {def.description[lang]}
-                  </p>
-                </div>
-              ))}
-            </div>
-
             <p className="mb-5 font-mono text-sm uppercase tracking-wider text-white/60">
               {t.skills.categories.language}
             </p>
@@ -101,27 +64,21 @@ export function Skills() {
                     {/* Language name */}
                     <p className="text-lg font-[550] text-white">{lang.name}</p>
 
-                    {/* Proficiency */}
-                    <div className="mt-3">
-                      <p className="mb-1.5 text-sm text-white/60">{t.skills.levelLabel}</p>
-                      <div
-                        className="flex gap-1.5"
-                        role="img"
-                        aria-label={`${t.skills.levelLabel} ${lang.level}/5`}
-                      >
-                        {Array.from({ length: 5 }).map((_, i) => (
-                          <div
-                            key={i}
-                            className="h-3 w-3 rounded-full transition-colors"
-                            style={
-                              i < (lang.level ?? 0)
-                                ? { backgroundColor: LEVEL_COLORS[i] }
-                                : { backgroundColor: 'rgba(255,255,255,0.2)' }
-                            }
-                          />
-                        ))}
+                    {/* 作ったもの（学習中の言語は学習している内容） */}
+                    {lang.capabilities && (
+                      <div className="mt-3">
+                        <p className="mb-1.5 text-sm text-white/60">
+                          {lang.isLearning ? t.skills.learningLabel : t.skills.builtLabel}
+                        </p>
+                        <ul className="flex list-disc flex-col gap-1 pl-5 marker:text-white/40">
+                          {lang.capabilities[currentLang].map((item) => (
+                            <li key={item} className="text-sm leading-relaxed text-white/85">
+                              {item}
+                            </li>
+                          ))}
+                        </ul>
                       </div>
-                    </div>
+                    )}
 
                     {/* Frameworks */}
                     {linkedFrameworks.length > 0 && (
@@ -132,27 +89,8 @@ export function Skills() {
                         </p>
                         <ul className="flex flex-col gap-2">
                           {linkedFrameworks.map((fw) => (
-                            <li key={fw.id}>
-                              <p className="text-base text-white/80">{fw.name}</p>
-                              {fw.level !== undefined && (
-                                <div
-                                  className="mt-1 flex gap-1.5"
-                                  role="img"
-                                  aria-label={`${t.skills.levelLabel} ${fw.level}/5`}
-                                >
-                                  {Array.from({ length: 5 }).map((_, i) => (
-                                    <div
-                                      key={i}
-                                      className="h-2 w-2 rounded-full transition-colors"
-                                      style={
-                                        i < fw.level!
-                                          ? { backgroundColor: LEVEL_COLORS[i] }
-                                          : { backgroundColor: 'rgba(255,255,255,0.2)' }
-                                      }
-                                    />
-                                  ))}
-                                </div>
-                              )}
+                            <li key={fw.id} className="text-base text-white/80">
+                              {fw.name}
                             </li>
                           ))}
                         </ul>

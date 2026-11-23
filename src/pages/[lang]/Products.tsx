@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useI18n } from '../../contexts/I18nContext';
 import { StatusBadge } from '../../components/StatusBadge';
+import { ProductTitle } from '../../components/ProductTitle';
 import { products } from '../../data/products';
 
 export function Products() {
@@ -56,15 +57,10 @@ export function Products() {
                       <StatusBadge status={product.status} />
                     </div>
                     <h2 className="mb-2 text-2xl font-[550] tracking-tight text-white md:text-3xl">
-                      {product.logoUrl ? (
-                        <img
-                          src={product.logoUrl}
-                          alt={product.title}
-                          className="h-12 w-auto drop-shadow-[0_0_8px_rgba(255,255,255,0.35)] md:h-14"
-                        />
-                      ) : (
-                        product.title
-                      )}
+                      <ProductTitle
+                        product={product}
+                        logoClassName="h-12 w-auto drop-shadow-[0_0_8px_rgba(255,255,255,0.35)] md:h-14"
+                      />
                     </h2>
                     <p className="max-w-[60ch] text-pretty text-base leading-7 text-white">
                       {product.description[lang]}

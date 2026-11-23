@@ -13,6 +13,7 @@ export interface Skill {
   parentLanguage?: string;
   acquiredDate?: string;
   capabilities?: { ja: string[]; en: string[] };
+  isLearning?: boolean;
 }
 
 export interface Product {
@@ -32,6 +33,7 @@ export interface Product {
   demoUrl?: string;
   siteUrl?: string;
   logoUrl?: string;
+  logoSize?: { width: number; height: number };
   imageUrl?: string;
   order: number;
 }
@@ -94,7 +96,8 @@ export interface LocaleData {
       tool: string;
       certification: string;
     };
-    levelLabel: string;
+    builtLabel: string;
+    learningLabel: string;
   };
   products: {
     title: string;

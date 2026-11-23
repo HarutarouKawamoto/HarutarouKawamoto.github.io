@@ -8,9 +8,9 @@
     "contact": "Contact"
   },
   "home": {
-    "eyebrow": "Aspiring Backend Engineer",
+    "eyebrow": "Aspiring Backend Engineer (TypeScript / Node.js)",
     "catchcopy": "HARUTAROU KAWAMOTO",
-    "subtitle": "I love building beautiful, user-friendly UIs with TypeScript and React. I share my learnings through blog posts.",
+    "subtitle": "I build tools that solve real problems for the people who use them, with TypeScript and Node.js. I develop with AI through spec-driven workflows, and share what I learn on my blog.",
     "viewWork": "View My Work",
     "contactMe": "Contact Me",
     "aboutMe": "About Me"
@@ -31,12 +31,12 @@
       "My goal is to become an engineer who can develop web services single-handedly — services that understand users' challenges and solve them with my own skills. I want to cherish the wonder I felt as a child when 'things moved in response to actions,' and contribute to building things that help people and organizations through technology."
     ],
     "currentTitle": "Current Focus",
-    "current": "I'm currently working on developer support tools and improving my practical development skills through test-driven development with Claude.",
+    "current": "My health is now stable, and I keep developing and learning consistently. I build developer support tools such as HanaME and SumiRE with AI through spec-driven workflows.",
     "careerTitle": "Career",
     "careerItems": [
       { "date": "Mar 2022", "description": "Graduated from Kanagawa Prefectural Atsugi Seinan High School" },
       { "date": "Apr 2022", "description": "Enrolled in Tokyo Denki University, Faculty of Systems Design Engineering" },
-      { "date": "Sep 2024", "description": "Withdrew from university. Began recovering from health issues at home" },
+      { "date": "Sep 2024", "description": "Left university and recovered at my family home" },
       { "date": "Feb 2025", "description": "Started learning programming with Python scripting" },
       { "date": "Apr 2025", "description": "Started learning HTML/CSS, JavaScript, and FastAPI" },
       { "date": "Aug 2025", "description": "Took the Fundamental Information Technology Engineer Exam for the first time" },
@@ -62,7 +62,8 @@
       "tool": "Tools",
       "certification": "Certifications"
     },
-    "levelLabel": "Proficiency"
+    "builtLabel": "What I've built",
+    "learningLabel": "Currently learning"
   },
   "products": {
     "title": "Products",
