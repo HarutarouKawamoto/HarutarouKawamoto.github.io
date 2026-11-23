@@ -8,9 +8,9 @@
     "contact": "お問い合わせ"
   },
   "home": {
-    "eyebrow": "バックエンド志望者",
+    "eyebrow": "バックエンド志望（TypeScript / Node.js）",
     "catchcopy": "HARUTAROU KAWAMOTO",
-    "subtitle": "TypeScript・React を中心に、誰かのためになるものを人が使うことを考えて作ることが好きです。技術の学びや思想をBLOGで発信しています。",
+    "subtitle": "使う人の困りごとを、TypeScript と Node.js で解くツールを作っています。AI と仕様駆動で開発し、技術の学びや考えを BLOG で発信しています。",
     "viewWork": "作品を見る",
     "contactMe": "お問い合わせ",
     "aboutMe": "私について"
@@ -31,12 +31,12 @@
       "将来的には、ユーザーの課題を捉え、自身の技術で解決できるWebサービスを一人で開発できるエンジニアになることを目標としています。幼少期に感じた「操作によって何かが動くことの感動」を大切にしながら、技術を通じて人や組織の役に立つものづくりに取り組んでいきたいと考えています。"
     ],
     "currentTitle": "現在の取り組み",
-    "current": "現在は開発者支援ツールの開発や、Claudeを活用したテスト駆動開発を通じて、実践的な開発力の向上に取り組んでいます。",
+    "current": "現在は体調も安定し、継続して開発と学習に取り組んでいます。HanaME・SumiRE などの開発者支援ツールを、AI と仕様駆動で開発しています。",
     "careerTitle": "経歴",
     "careerItems": [
       { "date": "2022年3月", "description": "神奈川県立厚木清南高等学校 卒業" },
       { "date": "2022年4月", "description": "東京電機大学 システムデザイン工学部 デザイン工学科 入学" },
-      { "date": "2024年9月", "description": "大学を退学。心身の不調により実家にて休養開始" },
+      { "date": "2024年9月", "description": "大学を中退し、実家で療養" },
       { "date": "2025年2月", "description": "Pythonでのスクリプト作成から学習開始" },
       { "date": "2025年4月", "description": "HTML/CSS・JavaScript・FastAPIの学習開始" },
       { "date": "2025年8月", "description": "基本情報技術者試験を初受験" },
@@ -62,7 +62,8 @@
       "tool": "ツール",
       "certification": "資格"
     },
-    "levelLabel": "熟練度"
+    "builtLabel": "作ったもの",
+    "learningLabel": "学習中"
   },
   "products": {
     "title": "開発作品",

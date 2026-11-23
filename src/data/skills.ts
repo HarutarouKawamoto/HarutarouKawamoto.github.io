@@ -1,16 +1,65 @@
 import type { Skill } from '../types';
 
 export const skills: Skill[] = [
-  // Languages
-  { id: 'typescript', name: 'TypeScript', category: 'language', level: 3 },
-  { id: 'javascript', name: 'JavaScript', category: 'language', level: 4 },
-  { id: 'python', name: 'Python', category: 'language', level: 3 },
-  { id: 'sql', name: 'SQL', category: 'language', level: 2 },
-  { id: 'html-css', name: 'HTML / CSS', category: 'language', level: 4 },
-  { id: 'java', name: 'Java', category: 'language', level: 1 },
-  { id: 'cpp', name: 'C++', category: 'language', level: 1 },
-  { id: 'c', name: 'C', category: 'language', level: 1 },
-  { id: 'php', name: 'PHP', category: 'language', level: 1 },
+  // Languages — 自己評価の星ではなく「作ったもの」で示す（評価基準は個人の記録に移した）
+  {
+    id: 'typescript',
+    name: 'TypeScript',
+    category: 'language',
+    capabilities: {
+      ja: ['SumiRE の画面（Vite）', 'このポートフォリオ（React）', 'Kudos-Loop（Next.js + NestJS）'],
+      en: ['SumiRE UI (Vite)', 'This portfolio (React)', 'Kudos-Loop (Next.js + NestJS)'],
+    },
+  },
+  {
+    id: 'javascript',
+    name: 'JavaScript',
+    category: 'language',
+    capabilities: {
+      ja: [
+        'HanaME・SumiRE のローカルサーバー（ファイルの読み書き・変更通知・セキュリティ対策）',
+        'Discord BOT（discord.js + Gemini API）',
+      ],
+      en: [
+        'Local servers for HanaME and SumiRE (file I/O, change notifications, security hardening)',
+        'Discord bot (discord.js + Gemini API)',
+      ],
+    },
+  },
+  {
+    id: 'sql',
+    name: 'SQL',
+    category: 'language',
+    capabilities: {
+      ja: ['Kudos-Loop の DB 設計（PostgreSQL + Prisma）', 'ER 図での設計'],
+      en: ['Database design for Kudos-Loop (PostgreSQL + Prisma)', 'Designing with ER diagrams'],
+    },
+  },
+  {
+    id: 'python',
+    name: 'Python',
+    category: 'language',
+    capabilities: {
+      ja: ['Discord の AI チャット BOT', 'Google カレンダーと連携した自動化スクリプト'],
+      en: ['AI chat bot for Discord', 'Automation scripts integrated with Google Calendar'],
+    },
+  },
+  {
+    id: 'html-css',
+    name: 'HTML / CSS',
+    category: 'language',
+    capabilities: {
+      ja: ['このポートフォリオ（Tailwind CSS）', 'HanaME・SumiRE の紹介サイト'],
+      en: ['This portfolio (Tailwind CSS)', 'Landing sites for HanaME and SumiRE'],
+    },
+  },
+  {
+    id: 'java',
+    name: 'Java',
+    category: 'language',
+    isLearning: true,
+    capabilities: { ja: ['Spring'], en: ['Spring'] },
+  },
 
   // Frameworks — linked to parent language
   { id: 'react', name: 'React', category: 'framework', parentLanguage: 'typescript' },
@@ -21,11 +70,10 @@ export const skills: Skill[] = [
   { id: 'zod', name: 'Zod', category: 'framework', parentLanguage: 'typescript' },
   { id: 'clsx', name: 'clsx', category: 'framework', parentLanguage: 'typescript' },
   { id: 'tailwind', name: 'Tailwind CSS', category: 'framework', parentLanguage: 'typescript' },
-  { id: 'nodejs', name: 'Node.js', category: 'framework', parentLanguage: 'javascript', level: 3 },
+  { id: 'nodejs', name: 'Node.js', category: 'framework', parentLanguage: 'javascript' },
   { id: 'express', name: 'Express', category: 'framework', parentLanguage: 'javascript' },
   { id: 'fastapi', name: 'FastAPI', category: 'framework', parentLanguage: 'python' },
   { id: 'django', name: 'Django', category: 'framework', parentLanguage: 'python' },
-  { id: 'laravel', name: 'Laravel', category: 'framework', parentLanguage: 'php' },
 
   // Databases
   { id: 'mysql', name: 'MySQL', category: 'db', parentLanguage: 'sql' },

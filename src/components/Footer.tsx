@@ -2,8 +2,6 @@ import { Link } from 'react-router-dom';
 import { useI18n } from '../contexts/I18nContext';
 import { SOCIAL_LINKS } from '../data/social';
 
-const LAST_UPDATED = '2026-04-18';
-
 export function Footer() {
   const { lang, t } = useI18n();
 
@@ -14,7 +12,7 @@ export function Footer() {
     { label: t.nav.blog,     href: `/${lang}/blog` },
   ];
 
-  const formattedDate = new Date(LAST_UPDATED).toLocaleDateString(
+  const formattedDate = new Date(__BUILD_DATE__).toLocaleDateString(
     lang === 'ja' ? 'ja-JP' : 'en-US',
     { year: 'numeric', month: 'long', day: 'numeric' }
   );

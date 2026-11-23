@@ -83,13 +83,15 @@ interface Skill {
   id: string;            // 一意識別子（例: "typescript"）
   name: string;          // 表示名（例: "TypeScript"）
   category: SkillCategory; // カテゴリ
-  level?: SkillLevel;    // 熟練度（category === 'language' の場合のみ）
+  level?: SkillLevel;    // 熟練度（2026-11-23 から未使用。capabilities で示す）
+  capabilities?: { ja: string[]; en: string[] }; // 言語ごとの「作ったもの」
+  isLearning?: boolean;  // true なら見出しを「学習中」にする
   iconUrl?: string;      // アイコン画像パス（任意）
 }
 ```
 
 **制約**:
-- `level` は `category === 'language'` の場合のみ設定する
+- 言語カテゴリは `level` ではなく `capabilities`（作ったもの）を設定する。自己評価の星は表示しない
 - `id` はケバブケース（`react`, `node-js` など）
 - `name` は表示用の正式名称
 
@@ -183,7 +185,8 @@ interface LocaleData {
       framework: string;
       tool: string;
     };
-    levelLabel: string; // "熟練度" / "Proficiency"
+    builtLabel: string;    // "作ったもの" / "What I've built"
+    learningLabel: string; // "学習中" / "Currently learning"
   };
   products: {
     title: string;
@@ -248,7 +251,7 @@ interface NavigationProps {
 
 **責務**:
 - スキル名・アイコン・カテゴリの表示
-- 言語カテゴリの場合のみ熟練度バーを表示
+- 言語カテゴリの場合は「作ったもの」（学習中なら学習内容）を箇条書きで表示
 
 **インターフェース**:
 ```typescript
@@ -257,8 +260,8 @@ interface SkillCardProps {
 }
 ```
 
-**熟練度バー表示ロジック**:
-- `skill.category === 'language'` かつ `skill.level` が存在する場合のみ5段階バーを描画
+**作ったものの表示ロジック**:
+- `skill.category === 'language'` かつ `skill.capabilities` がある場合のみ箇条書きを描画（`isLearning` なら見出しを「学習中」に）
 - それ以外はアイコン+名前のシンプル表示
 
 ---
